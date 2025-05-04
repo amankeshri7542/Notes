@@ -32,51 +32,55 @@ const EditNote = ({ currentId, notes, updateNote, setCurrentId }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 rounded-lg shadow-md">
-      <div className="mb-4">
-        <label htmlFor="title" className="block text-gray-700 font-medium mb-2">
-          Title
-        </label>
-        <input
-          type="text"
-          id="edit-title"
-          name="title"
-          value={noteData.title}
-          onChange={(e) => setNoteData({ ...noteData, title: e.target.value })}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        />
+    <div className="form-overlay">
+      <div className="form-container">
+        <h2 className="form-title">Edit Note</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="edit-title" className="form-label">
+              Title
+            </label>
+            <input
+              type="text"
+              id="edit-title"
+              name="title"
+              value={noteData.title}
+              onChange={(e) => setNoteData({ ...noteData, title: e.target.value })}
+              className="form-input"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="edit-content" className="form-label">
+              Content
+            </label>
+            <textarea
+              id="edit-content"
+              name="content"
+              value={noteData.content}
+              onChange={(e) => setNoteData({ ...noteData, content: e.target.value })}
+              className="form-textarea"
+              required
+            ></textarea>
+          </div>
+          <div className="form-buttons">
+            <button
+              type="button"
+              onClick={handleCancel}
+              className="cancel-btn"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              className="submit-btn"
+            >
+              Update Note
+            </button>
+          </div>
+        </form>
       </div>
-      <div className="mb-4">
-        <label htmlFor="content" className="block text-gray-700 font-medium mb-2">
-          Content
-        </label>
-        <textarea
-          id="edit-content"
-          name="content"
-          value={noteData.content}
-          onChange={(e) => setNoteData({ ...noteData, content: e.target.value })}
-          rows="4"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
-        ></textarea>
-      </div>
-      <div className="flex space-x-2">
-        <button
-          type="submit"
-          className="flex-1 bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-          Update Note
-        </button>
-        <button
-          type="button"
-          onClick={handleCancel}
-          className="flex-1 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
-        >
-          Cancel
-        </button>
-      </div>
-    </form>
+    </div>
   );
 };
 
