@@ -22,7 +22,7 @@ A full-stack notes application built with the MERN stack (MongoDB, Express, Reac
 1. Clone the repository
 
 ```
-git clone https://github.com/your-username/mern-notes-app.git
+git clone https://github.com/amankeshri7542/Notes.git
 cd mern-notes-app
 ```
 
@@ -51,5 +51,6 @@ npm start
 
 # In a separate terminal, start frontend
 cd client
+$env:NODE_OPTIONS="--openssl-legacy-provider"
 npm start
 ```
