@@ -20,12 +20,14 @@ A full-stack notes application built with the MERN stack (MongoDB, Express, Reac
 ## Installation
 
 1. Clone the repository
+
 ```
 git clone https://github.com/your-username/mern-notes-app.git
 cd mern-notes-app
 ```
 
 2. Install dependencies
+
 ```
 npm install
 cd client && npm install
@@ -33,13 +35,15 @@ cd ../server && npm install
 ```
 
 3. Set up environment variables
-Create a `.env` file in the server directory with:
+   Create a `.env` file in the server directory with:
+
 ```
 MONGODB_URI=your_mongodb_connection_string
 PORT=5000
 ```
 
 4. Start the application
+
 ```
 # Start backend server
 cd server
@@ -49,11 +53,3 @@ npm start
 cd client
 npm start
 ```
-
-## Screenshots
-
-![Notes App Screenshot](screenshot.png)
-
-## License
-
-MIT
